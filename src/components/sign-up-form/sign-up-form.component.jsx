@@ -19,8 +19,8 @@ console.log(formFields)
 
 
 const handleChange = (event)=>{
- const { name, value} = event.target;
- setFormFields({...formFields, [name]: value}) //set 
+ const { name, value} = event.target; //takes what's inside input 
+ setFormFields({...formFields, [name]: value}) // brings the formfields, takes what's passing in name and set the value. 
 }
 
     return (
@@ -33,7 +33,7 @@ const handleChange = (event)=>{
             required
             name="displayName"
             onChange={handleChange}
-            value={displayName}
+            value={displayName} // value from state is the one is passing in the input
           />
 
           <laber> Email</laber>
