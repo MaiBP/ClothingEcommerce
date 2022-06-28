@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import FormInput from '../form-input/form-input.component'
 import {createAuthUserWithEmailAndPassword , createUserDocumentFromAuth} from '../../utils/firebase/firebase.utils'
+import "./sign-up-form.styles.scss";
 
 const defaultFormFields = {
     displayName: '',
@@ -37,8 +39,9 @@ const handleSubmit = async (event) => {
 
   await createUserDocumentFromAuth(user, {displayName});
   resetFormFields() //clear the form fields 
+
   }catch(error){
-    if (error.code == "auth/email-already-in-use"){
+    if (error.code === "auth/email-already-in-use"){
       alert('Cannot create user, email already exists')
     } else{
       console.log("user creation encoutered an error", error);
@@ -51,11 +54,12 @@ const handleChange = (event)=>{
 }
 
     return (
-      <div>
-        <h1>Sign up with your email and password</h1>
+      <div className='sign-up-container'>
+        <h2>Don't have an account?</h2>
+        <span>Sign up with your email and password</span>
         <form onSubmit={handleSubmit}>
-          <laber> Name</laber>
-          <input
+          <FormInput
+            label="Display Name"
             type="text"
             required
             name="displayName"
@@ -63,8 +67,8 @@ const handleChange = (event)=>{
             value={displayName} // value from state is the one is passing in the input
           />
 
-          <laber> Email</laber>
-          <input
+          <FormInput
+            label="Email"
             type="email"
             required
             name="email"
@@ -72,8 +76,8 @@ const handleChange = (event)=>{
             value={email}
           />
 
-          <laber> Password</laber>
-          <input
+          <FormInput
+            label="Password"
             type="password"
             required
             name="password"
@@ -81,8 +85,8 @@ const handleChange = (event)=>{
             value={password}
           />
 
-          <laber> Confirm password</laber>
-          <input
+          <FormInput
+            label="Confirm Password"
             type="password"
             required
             name="confirmPassword"
