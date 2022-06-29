@@ -27,7 +27,7 @@ $main-color: black;
     &:focus {
       outline: none;
     }
-
+//attached the sibiling to the 
     &:focus ~ .form-input-label {
       @include shrinkLabel();
     }
