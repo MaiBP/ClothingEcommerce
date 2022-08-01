@@ -10,10 +10,10 @@ const ProductCard = ({product}) =>{
         <div className="footer">
           <span className="name">{name}</span>
           <span className="price">{price}</span>
-          <Button buttonType="inverted">Add to cart</Button>
         </div>
+        <Button buttonType="inverted">Add to cart</Button>
       </div>
     );
 }
 
-export default ProductCard
+export default ProductCard;
