@@ -1,4 +1,7 @@
-.product-card-container {
+import styles from 'styled-components'
+import { InvertedButton } from '../button/button.styles'
+
+export const ProductCardContainer = styles.div`
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -13,7 +16,7 @@
         margin-bottom: 5px;
     }
 
-    button {
+    ${InvertedButton} {
         width: 80%;
         opacity: 0.7;
         position: absolute;
@@ -30,22 +33,29 @@
             opacity: 0.85;
             display: flex;
         }
-    }
+    
+`
 
-    .footer {
+
+
+
+
+
+export const Footer = styles.div`
         width: 100%;
         height: 5%;
         display: flex;
         justify-content: space-between;
-        font-size: 18px;
+        font-size: 18px;   
+`
 
-        .name {
-            width: 90%;
-            margin-bottom: 15px;
-        }
+export const Name = styles.span` 
+width: 90%;
+margin-bottom: 15px;
+`
 
-        .price {
-            width: 10%;
-        }
-    }
-}
+export const Price = styles.span`
+ width: 10%;
+`
+
+        
