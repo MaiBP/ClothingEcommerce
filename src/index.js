@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 import './index.scss';
 import App from './App';
 // userProvider to acces the 
@@ -13,15 +14,17 @@ import { CartProvider } from './contexts/cart.context'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
     <BrowserRouter>
-    <UserProvider>
+   
       <CategoriesProvider >
         <CartProvider>
           <App />
         </CartProvider>  
       </CategoriesProvider>
-    </UserProvider>
+  
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
