@@ -28,7 +28,7 @@ useEffect(() => {
       //    console.log(user)
     });
     return unsubscribe;
-  }, []);
+  }, [dispatch]);
 
  return (
 <Routes>
