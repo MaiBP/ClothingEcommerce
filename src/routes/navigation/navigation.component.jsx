@@ -2,7 +2,7 @@ import { Outlet, Link} from "react-router-dom";
 import { Fragment, useContext } from 'react'
 import { ReactComponent as CrwnLog} from '../../assets/crown.svg'
 import { useSelector } from "react-redux";
-import { UserContext } from "../../contexts/user.context";
+
 import { signOutUser } from "../../utils/firebase/firebase.utils"
 import { NavigationContainer, NavLinks, NavLink, LogoContainer } from './navigation.styles';
 
