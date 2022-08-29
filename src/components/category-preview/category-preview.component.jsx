@@ -6,7 +6,7 @@ import { CategoryPreviewContainer, Preview, Title} from './category-preview.styl
 
 
 
-export const CategoryPreview = ( { title, products }) => {
+const CategoryPreview = ( { title, products }) => {
 return (
     <CategoryPreviewContainer>
         <h2>
@@ -21,4 +21,5 @@ return (
     </CategoryPreviewContainer>
 )
 }
+export default CategoryPreview;
 
